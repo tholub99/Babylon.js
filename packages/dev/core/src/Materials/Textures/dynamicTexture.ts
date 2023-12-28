@@ -16,7 +16,6 @@ export class DynamicTexture extends Texture {
     private _canvas: ICanvas;
     private _ownCanvas: boolean;
     private _context: ICanvasRenderingContext;
-
     /**
      * Creates a DynamicTexture
      * @param name defines the name of the texture
@@ -217,7 +216,7 @@ export class DynamicTexture extends Texture {
         super.dispose();
 
         if (this._ownCanvas) {
-            this._canvas.remove();
+            this._canvas?.remove();
         }
         (this._canvas as any) = null;
         (this._context as any) = null;
